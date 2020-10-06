@@ -183,6 +183,7 @@ class LearnTestsActivity : AppCompatActivity() {
                 i.value[0] = choices[0]
                 choices.removeAt(0)
                 i.value[1] = "wrong"
+                print("sfd")
             }
         }
     }
