@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="7dp">
+
+    <TextView
+        android:id="@+id/statText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Всего пар\n соеденино: 100 \n \n Процент решенных \nправильно: 90%  \n\nОшибок: 10"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <Button
+        android:id="@+id/yesBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="2dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="2dp"
+        android:text="ок"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/noBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statText" />
+
+    <TextView
+        android:id="@+id/statMsg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Статистика"
+        android:textAlignment="center"
+        android:textColor="#C62828"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/noBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="закрыть"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

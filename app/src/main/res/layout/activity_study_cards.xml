@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.zhenya.flashcards.activities.StudyCardsActivity">
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/exitFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#512DA8"
+        android:backgroundTint="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Выйти"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/flipCardLearn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoFlipBack="false"
+        app:flipDuration="400"
+        app:flipEnabled="true"
+        app:flipFrom="right"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <!-- Back Layout Goes Here -->
+        <include layout="@layout/layout_card_back" />
+
+        <!-- Front Layout Goes Here -->
+        <include layout="@layout/layout_card_front" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/nextFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#512DA8"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Следущая карточка"
+        android:visibility="visible"
+        app:icon="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:iconGravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

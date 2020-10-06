@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/ColumnName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Категория"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/ColumnContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Введите название категории"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:id="@+id/toneLayout"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/toneBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˉ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˊ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneBtn3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˇ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneBtn4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˋ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneBtn5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/noBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Отменить"
+            android:textSize="12sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/yesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Изменить"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

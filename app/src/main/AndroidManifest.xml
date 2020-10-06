@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhenya.flashcards">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/flashcards_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/flashcards_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.LearnPairsActivity"></activity>
+        <activity android:name=".activities.LearnTestsActivity" />
+        <activity android:name=".activities.StudyCardsActivity" />
+        <activity android:name=".activities.ModulesViewActivity" />
+        <activity android:name=".activities.ChooseModuleShareActivity">
+            <intent-filter
+                android:icon="@drawable/flashcards_icon"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:pathPattern=".*\\.fc" />
+                <data
+                    android:host="*"
+                    android:mimeType="text/plain"
+                    android:scheme="content" />
+            </intent-filter>
+            <intent-filter
+                android:icon="@drawable/flashcards_icon"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="application/octet-stream"
+                    android:scheme="content" />
+            </intent-filter>
+            <intent-filter
+                android:icon="@drawable/flashcards_icon"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="application/fc"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".adaptersAndViewHolders.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".activities.LearnCheckCardsActivity" />
+        <activity android:name=".activities.LearnCardsActivity" />
+        <activity android:name=".activities.ChooseWordsActivity" />
+        <activity android:name=".activities.LearnChooseActivity" />
+        <activity
+            android:name=".activities.CategoriesListActivity"
+            android:label="Категории"
+            android:parentActivityName=".activities.ModulesListActivity" />
+        <activity android:name=".activities.CharacterUpdateActivity" />
+        <activity android:name=".activities.CharactersListActivity" />
+        <activity android:name=".activities.ModulesUpdateActivity" />
+        <activity
+            android:name=".activities.ModulesListActivity"
+            android:label="Модули"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity android:name=".activities.testActivity" />
+        <activity android:name=".activities.CharacterAddActivity" />
+        <activity
+            android:name=".activities.ModuleAddActivity"
+            android:label="@string/add_module" />
+        <activity android:name=".activities.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

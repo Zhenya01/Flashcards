@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.zhenya.flashcards.activities.StudyCardsActivity">
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/flipCardTests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoFlipBack="false"
+        app:flipDuration="400"
+        app:flipEnabled="true"
+        app:flipFrom="right"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18">
+
+        <!-- Back Layout Goes Here -->
+        <include layout="@layout/layout_card_back" />
+
+        <!-- Front Layout Goes Here -->
+        <include layout="@layout/layout_card_front" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+    <TextView
+        android:id="@+id/a"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/rounded_corners_base"
+        android:gravity="center_horizontal|center_vertical"
+        android:tag="a"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/c"
+        app:layout_constraintEnd_toStartOf="@+id/b"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipCardTests" />
+
+    <TextView
+        android:id="@+id/c"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_corners_base"
+        android:gravity="center_horizontal|center_vertical"
+        android:tag="c"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/d"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a" />
+
+    <TextView
+        android:id="@+id/d"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_corners_base"
+        android:gravity="center_horizontal|center_vertical"
+        android:tag="d"
+        android:text="Централизованный"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/c"
+        app:layout_constraintTop_toBottomOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/b"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_corners_base"
+        android:gravity="center_horizontal|center_vertical"
+        android:tag="b"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/a"
+        app:layout_constraintTop_toBottomOf="@+id/flipCardTests" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="109dp" />
+
+    <Button
+        android:id="@+id/finishTestsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="Завершить"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipCardTests"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

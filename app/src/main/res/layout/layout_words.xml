@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    app:cardElevation="5dp">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipelayoutWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dragEdge="right"
+        app:mode="normal">
+
+        <!-- Your secondary layout here -->
+        <FrameLayout
+            android:id="@+id/backviewWords"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp">
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:cardCornerRadius="5dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/delBtnWords"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="#EF5350"
+                        android:scaleType="centerInside"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        app:srcCompat="@drawable/ic_baseline_delete_24" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:cardCornerRadius="5dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/editBtnWords"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#42A5F5"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/baseline_create_white_18dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <!-- Your main layout here -->
+        <LinearLayout
+            android:id="@+id/frontViewWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/hanziTV"
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="1dp"
+                android:alpha="100"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical|center"
+                android:paddingLeft="1dp"
+                android:text="汉语综合"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pinyinTV"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="0.5dp"
+                    android:layout_weight="1"
+                    android:alpha="100"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical|center"
+                    android:text="hànyǔ zònghé"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/EngTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_weight="1"
+                    android:alpha="100"
+                    android:paddingStart="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical|center"
+                    android:paddingTop="0.5dp"
+                    android:text="chinese overall"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+</com.google.android.material.card.MaterialCardView>

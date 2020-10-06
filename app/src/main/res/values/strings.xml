@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Flashcards</string>
+    <string name="study">Обучение</string>
+    <string name="add">Добавить</string>
+    <string name="module">Модуль</string>
+    <string name="module_name">Название</string>
+    <string name="module_description">Описание</string>
+    <string name="create">Создать</string>
+    <string name="character">Иероглиф</string>
+    <string name="pinyin">Пинь-инь</string>
+    <string name="transcription">Транскрипция</string>
+    <string name="add_module">Создание модуля</string>
+    <string name="add_to_module">Добавить слова</string>
+    <string name="name">Название</string>
+    <string name="add_description">Добавьте краткое описание</string>
+    <string name="add_name">Придумайте название модуля</string>
+    <string name="description">Описание</string>
+    <string name="add_character">Введите название иероглифа</string>
+    <string name="add_transcription">Введите транскрипцию</string>
+    <string name="translation">Перевод</string>
+    <string name="add_translation">Введите перевод</string>
+    <string name="finish">Завершить</string>
+    <string name="addModule">Добавить модуль</string>
+    <string name="check_file">This is Flashcards Zhenya app file</string>
+
+
+</resources>

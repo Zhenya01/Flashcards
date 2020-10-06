@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/moduleExistsHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Модуль уже существует"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/moduleExistsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/leaveBothBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="clip_vertical|center_horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="Оставить\nоба"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mergeBtn"
+        app:layout_constraintEnd_toStartOf="@+id/mergeBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/delOldBtn" />
+
+    <Button
+        android:id="@+id/delOldBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="clip_vertical|center_horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="Удалить\nстарый"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/leaveBothBtn"
+        app:layout_constraintEnd_toStartOf="@+id/leaveBothBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mergeBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical|center_horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="Добавить в\nстарый"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/leaveBothBtn"
+        app:layout_constraintTop_toBottomOf="@+id/delOldBtn" />
+
+    <TextView
+        android:id="@+id/moduleExistsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Импортируемый модуль уже существует. Выберите что сделать с модулем "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/leaveBothBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moduleExistsHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

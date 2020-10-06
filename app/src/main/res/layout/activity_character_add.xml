@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhenya.flashcards.activities.CharacterAddActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:background="#000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/translationTestView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPinYin">
+
+        <TextView
+            android:id="@+id/toneButton1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:onClick="toneButtonClicked"
+            android:text="ˉ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneButton2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:onClick="toneButtonClicked"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˊ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneButton3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="toneButtonClicked"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:text="ˇ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneButton4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:onClick="toneButtonClicked"
+            android:text="ˋ"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/toneButton5"
+            android:onClick="toneButtonClicked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#B3E5FC"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTranslation"
+        app:layout_constraintVertical_bias="0.491" />
+
+    <TextView
+        android:id="@+id/translationTestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/translation"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPinYin"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <EditText
+        android:id="@+id/inputPinYin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="@string/add_transcription"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transcriptionTestView"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <TextView
+        android:id="@+id/characterTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/character"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <Button
+        android:id="@+id/addCharacterButton"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTranslation"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <EditText
+        android:id="@+id/inputTranslation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="@string/add_translation"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translationTestView"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <EditText
+        android:id="@+id/inputCharacter"
+        android:hint="@string/add_character"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterTextView"
+        app:layout_constraintVertical_bias="0.029999971" />
+
+    <TextView
+        android:id="@+id/transcriptionTestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/transcription"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCharacter"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
