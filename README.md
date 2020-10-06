@@ -1,2 +1,2 @@
 # Flashcards
-Flashcards android app
+Chinese flashcards android app
