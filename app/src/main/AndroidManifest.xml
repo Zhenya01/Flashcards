@@ -4,6 +4,14 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/flashcards_icon"
@@ -11,7 +19,8 @@
         android:roundIcon="@mipmap/flashcards_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LearnPairsActivity"></activity>
+        <activity android:name=".activities.CameraActivity"></activity>
+        <activity android:name=".activities.LearnPairsActivity" />
         <activity android:name=".activities.LearnTestsActivity" />
         <activity android:name=".activities.StudyCardsActivity" />
         <activity android:name=".activities.ModulesViewActivity" />
