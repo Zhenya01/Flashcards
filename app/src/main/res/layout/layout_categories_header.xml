@@ -19,8 +19,8 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -28,28 +28,41 @@
                 android:id="@+id/expandable_category_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="8dp"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="综合" />
 
             <ImageView
                 android:id="@+id/item_expandable_category_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="0dp"
+                android:layout_marginTop="7.5dp"
                 android:tint="#FFFFFF"
                 app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/addModuleBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="7.5dp"
             android:layout_marginEnd="12dp"
             android:visibility="gone"
-            app:srcCompat="@drawable/round_add_white_24" />
+            app:srcCompat="@drawable/ic_baseline_library_add_24" />
+
+        <ImageView
+            android:id="@+id/addByPhotoBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

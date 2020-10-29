@@ -50,10 +50,6 @@ class CategoriesListActivity : AppCompatActivity() {
         categoriesView.adapter = adapter
         categoriesView.layoutManager = LinearLayoutManager(this)
         addFAB_categories.setOnClickListener { showDialogCreate(adapter) }
-        camera_button.setOnClickListener {
-            val nextIntent = Intent(this, CameraActivity::class.java)
-            startActivity(nextIntent)
-        }
     }
 
     fun showDialogCreate(adapter: GroupAdapter<GroupieViewHolder>) {
