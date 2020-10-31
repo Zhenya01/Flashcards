@@ -6,13 +6,18 @@ import com.zhenya.flashcards.classes.DataBaseHandler
 import com.zhenya.flashcards.classes.Modules
 import android.app.Dialog
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.ExpandableGroup
 import com.xwray.groupie.GroupAdapter
@@ -20,8 +25,18 @@ import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Section
 import com.zhenya.flashcards.*
 import kotlinx.android.synthetic.main.activity_modules_view.*
+import kotlinx.android.synthetic.main.layout_camera_dialog.*
+import java.io.File
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ModulesViewActivity : AppCompatActivity() {
+    lateinit var uri: Uri
+    lateinit var categoryNext: String
+    lateinit var currentPhotoPath: String
+    private val REQUEST_IMAGE_CAPTURE = 1
+    private val REQUEST_PICK_IMAGE = 2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modules_view)
@@ -116,5 +131,84 @@ class ModulesViewActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val nextIntent = Intent(this, StartActivity::class.java)
         startActivity(nextIntent)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == AppCompatActivity.RESULT_OK) {
+            if (requestCode == REQUEST_IMAGE_CAPTURE) {
+                uri = Uri.parse(currentPhotoPath)
+            }
+
+            else if (requestCode == REQUEST_PICK_IMAGE) {
+                uri = data?.data!!
+
+            }
+            val nextIntent = Intent(this, CameraActivity::class.java)
+            nextIntent.putExtra("fileUri", uri.toString())
+            startActivity(nextIntent)
+        }
+    }
+
+    private fun openCamera() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+            intent.resolveActivity(packageManager)?.also {
+                val photoFile: File? = try {
+                    createCapturedPhoto()
+                } catch (ex: IOException) {
+                   // If there is error while creating the File, it will be null
+                   null
+                }
+                Log.d("AppCustom", photoFile.toString())
+                photoFile?.absolutePath?.let { it1 -> Log.d("AppCustom", it1) }
+
+                photoFile?.also {
+                    val photoURI = FileProvider.getUriForFile(
+                        this,
+                        "${BuildConfig.APPLICATION_ID}.provider",
+                        it
+                    )
+
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                    startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
+                }
+            }
+        }
+    }
+    @Throws(IOException::class)
+    private fun createCapturedPhoto(): File {
+        val timestamp: String = SimpleDateFormat("yyyyMMdd-HHmmss", Locale.getDefault()).format(Date())
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+       return File.createTempFile("PHOTO_${timestamp}",".jpg", storageDir).apply {
+           currentPhotoPath = absolutePath
+        }
+    }
+
+    private fun openGallery() {
+        Intent(Intent.ACTION_GET_CONTENT).also { intent ->
+            intent.type = "image/*"
+            intent.resolveActivity(packageManager)?.also {
+                startActivityForResult(intent, REQUEST_PICK_IMAGE)
+            }
+        }
+    }
+    fun showDialog(category:String) {
+        categoryNext = category
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.layout_camera_dialog)
+        dialog.window?.attributes?.width = ViewGroup.LayoutParams.MATCH_PARENT
+        dialog.photoBtn.setOnClickListener {
+            openCamera()
+            dialog.dismiss()
+        }
+
+        dialog.galleryBtn.setOnClickListener {
+            openGallery()
+            dialog.dismiss()
+        }
+        dialog.show()
+
     }
 }

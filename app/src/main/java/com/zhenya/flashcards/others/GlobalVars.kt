@@ -14,3 +14,4 @@ const val COL_ID = "id"
 const val TABLE_CATEGORIES = "categories"
 const val COL_CATEGORY = "category"
 
+
